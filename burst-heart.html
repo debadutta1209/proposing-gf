@@ -6,15 +6,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Burst Heart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        .img-thumbnail {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-content {
+            position: relative;
+        }
+        .modal-footer p {
+            position: absolute;
+            left: 15px;
+            bottom: 10px;
+            margin: 0;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
-    <div width="100%">
-        <div>
-            <img class="img-thumbnail" src='sangha.jpg' style='height:768px;width:1024px;display:block;margin:0 auto'>
+    <div class="container">
+        <div class="content">
+            <img class="img-thumbnail" src='sangha.jpg' alt='Image'>
             <p class='text-danger text-center'>You❤ <i class='fa fa-heart'></i></p>
+            <button type="button" style='display:block;margin:0 auto' class="btn btn-danger btn-lg" data-toggle="modal" data-target="#feelings"> <i class='fa fa-heart'></i> Open my Heart❤ </button>
         </div>
-        <button type="button" style='display:block;margin:0 auto' class="btn btn-danger btn-lg" data-toggle="modal" data-target="#feelings"> <i class='fa fa-heart '></i> Open my Heart❤ </button>
     </div>
+
     <canvas id="canvas" width="1024" height="768">
         Laa sorry, canvas support garena!!  
     </canvas>
@@ -27,83 +63,70 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    You are the person I have been dreaming all my life <i class=' text-danger fa fa-heart'></i>, so allow me to express my intense love for you.<i class=' text-danger fa fa-heart'></i> You are the most precious thing in my life.
-                    You have fascinated my heart and seized my mind with your magnetic presence and I keep dreaming of yourself<i class=' text-danger fa fa-heart'></i>. Your memories are invaluable treasure of my life, which are locked inside my heart. <i class=' text-danger fa fa-heart'></i>The time spent with you was the most mesmerizing and delightful of my life.<i class=' text-danger fa fa-heart'></i> I take this opportunity to ask for your consent if you want to be my life partner.<i class=' text-danger fa fa-heart'></i>  This letter is a token of my love for you.<i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><a href='burst-heart.html'>Click Here</a>
+                    You are the person I have been dreaming all my life <i class=' text-danger fa fa-heart'></i>, so allow me to express my intense love for you. <i class=' text-danger fa fa-heart'></i> You are the most precious thing in my life.
+                    You have fascinated my heart and seized my mind with your magnetic presence and I keep dreaming of yourself <i class=' text-danger fa fa-heart'></i>. Your memories are an invaluable treasure of my life, which are locked inside my heart. <i class=' text-danger fa fa-heart'></i> The time spent with you was the most mesmerizing and delightful of my life. <i class=' text-danger fa fa-heart'></i> I take this opportunity to ask for your consent if you want to be my life partner. <i class=' text-danger fa fa-heart'></i> This letter is a token of my love for you. <i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><i class=' text-danger fa fa-heart'></i><a href='burst-heart.html'>Click Here</a>
                 </div>
                 <div class="modal-footer">
-                    <p style="position:absolute;left:15px"><small class='text-muted'>Made By Debadutta with and for Sanghamitra <i class='fa fa-heart text-danger'></i> </small></p>
+                    <p><small class='text-muted'>Made By Debadutta with and for Sanghamitra <i class='fa fa-heart text-danger'></i></small></p>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-</body>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-   $('#myModal').modal('show');
 
-var c = document.getElementById("canvas");
-var a = c.getContext("2d");
-var w = c.width;
-var h = c.height;
-var hearts = [];
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        // Heartburst animation
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var width = canvas.width;
+        var height = canvas.height;
+        var hearts = [];
 
-function Heart(x, y, size, direction, alpha) {
-    this.hue = (Math.random() * 25)|0 + 10;
-    this.x = x;
-    this.y = y;
-    this.size = (Math.random() * 60)|0 + 50;
-    this.direction = "u";
-    this.a = 1;
-}
-
-c.onmousemove = function(e) {
-    var mouseX, mouseY;
-
-    if (e.offsetX) {
-        mouseX = e.offsetX;
-        mouseY = e.offsetY;
-    }
-    else if (e.layerX) {
-        mouseX = e.layerX;
-        mouseY = e.layerY;
-    }
-
-    hearts.push(new Heart(mouseX - 4, mouseY - 4));
-};
-
-window.setInterval(function() {
-    a.fillStyle = "#fff";
-    a.fillRect(0, 0, w, h);
-
-    if (hearts.length === 0) return;
-
-    hearts = hearts.filter(function(val) {
-        return val.y >= 0 && val.a >= 0;
-    });
-
-    hearts.forEach(function(heart) {
-        heart.y = heart.y + 2;
-        heart.a = heart.a - 0.01;
-        if (heart.direction === "u") {
-            heart.size = heart.size + 5;
-            if (heart.size >= 100) heart.direction = "d";
-        } else {
-            heart.size = heart.size - 5;
-            if (heart.size <= 10) heart.direction = "u";
+        function Heart(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 30 + 20;
+            this.alpha = 1;
+            this.hue = Math.random() * 360;
         }
 
-        a.save();
-        a.font = heart.size + 'px Arial';
-        a.fillStyle = "hsla(" + heart.hue + ",100%,50%," + heart.a + ")";
-        a.fillText('♥', heart.x, heart.y);
-        a.restore();
-    });
-}, 17);
-</script>
+        canvas.addEventListener('mousemove', function(e) {
+            var rect = canvas.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            var y = e.clientY - rect.top;
+            hearts.push(new Heart(x, y));
+        });
+
+        function draw() {
+            context.clearRect(0, 0, width, height);
+
+            hearts = hearts.filter(function(heart) {
+                return heart.alpha > 0;
+            });
+
+            hearts.forEach(function(heart) {
+                heart.y -= 2;
+                heart.size += 0.5;
+                heart.alpha -= 0.02;
+
+                context.save();
+                context.font = heart.size + 'px Arial';
+                context.fillStyle = `hsla(${heart.hue}, 100%, 50%, ${heart.alpha})`;
+                context.fillText('♥', heart.x, heart.y);
+                context.restore();
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
 </html>
+
 
 
